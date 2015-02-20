@@ -1,6 +1,6 @@
 === Plugin Name ===
 Contributors: jondor
-Donate link: http://www.funsite.eu/omyprints/
+Donate link: http://www.funsite.eu/ohmyprints/
 Tags: widget,sale,omyprints,werkaandemuur
 Requires at least: 3.0.1
 Tested up to: 4.1

@@ -1,14 +1,14 @@
 <?php
 /**
- * @package ohmyprints
- * @version 1.0
+ * @package oh-my-prints
+ * @version 1.1
  */
 /*
 Plugin Name: Oh my prints
-Plugin URI: http://www.funsite.eu/plugins/ohmyprints
-Description: Link to a page on the "O my prints" site for selling the photo or painting on canvas..
+Plugin URI: http://www.funsite.eu/plugins/oh-my-prints
+Description: Link to a page on the "Oh my prints" site for selling the photo or painting on canvas..
 Author: Gerhard Hoogterp
-Version: 1.0
+Version: 1.1
 Author URI: http://www.funsite.eu/
 Text Domain: ohmyprints
 Domain Path: /languages
@@ -25,8 +25,8 @@ class ohmyprints_widget extends WP_Widget {
 	// constructor
 	function ohmyprints_widget() {
 		parent::WP_Widget(false, 
-							$name = __('Oh my Prints', self::FS_TEXTDOMAIN),
-							array('description' => __('Link to an page on "O my prints".',self::FS_TEXTDOMAIN))
+							$name = __('Oh my prints', self::FS_TEXTDOMAIN),
+							array('description' => __('Link to an page on "Oh my prints".',self::FS_TEXTDOMAIN))
 						);
 	}
 
@@ -81,6 +81,7 @@ class ohmyprints_widget extends WP_Widget {
 	    return $instance;
 	}
 
+	
 	// widget display
 	function widget($args, $instance) {
 		extract( $args );
@@ -104,9 +105,8 @@ class ohmyprints_widget extends WP_Widget {
 		}
 		
 		$nonce = wp_create_nonce("forsale_nonce");
-		//$link = admin_url('admin-ajax.php?action=clicked_for_sale&post_id='.$GLOBALS['post']->ID.'&nonce='.$nonce);
-
 		
+		$attribs['class']			= 'oh_my_prints_link';
 		$attribs['data-nonce']			= $nonce;
 		$attribs['data-post_id']		= $GLOBALS['post']->ID;
 		$attribs['data-value-wadm']		= $wadm_id;
@@ -118,15 +118,13 @@ class ohmyprints_widget extends WP_Widget {
 			$linkAttribs .= $tag.'= "'.$val.'" ';
 		endforeach;
 		
-		
 		echo '<div class="entry">';
 			if ($wadm_id) {
-				
-				print '<a class="button"'.$linkAttribs.'><img src="http://'.$useDomain.'/apple-touch-icon.png" class="frame" alt=""></a>';
+				print '<a class="button oh_my_prints_link"'.$linkAttribs.'><img src="http://'.$useDomain.'/apple-touch-icon.png" class="frame" alt=""></a>';
 				print sprintf($selltext,$linkAttribs);
 			} else {
 				if (substr($defaulturl,-1)==='/') { $defaulturl = substr($defaulturl,0,-1); }
-				print '<a class="button"'.$linkAttribs.'><img src="http://'.$useDomain.'/apple-touch-icon.png" class="frame" alt=""></a>';
+				print '<a class="button oh_my_prints_link"'.$linkAttribs.'><img src="http://'.$useDomain.'/apple-touch-icon.png" class="frame" alt=""></a>';
 				print sprintf($description,$linkAttribs);
 			}		
 			echo '</div>';
@@ -142,7 +140,7 @@ class ohmyprints_class  extends basic_plugin_class {
 	function getChildClassName() { return get_class($this); }
 
 	const FS_TEXTDOMAIN = 'ohmyprints';	
-	const FS_PLUGINNAME = 'ohmyprints';
+	const FS_PLUGINNAME = 'oh-my-prints';
 
 	function pluginInfoRight($info) {  }
 	
@@ -169,6 +167,8 @@ class ohmyprints_class  extends basic_plugin_class {
 		add_filter('manage_pages_columns', array($this,'ohmyprints_columns'));
 		add_action('manage_posts_custom_column',  array($this,'ohmyprints_show_columns'));
 		add_action('manage_pages_custom_column',  array($this,'ohmyprints_show_columns'));
+
+		add_shortcode( 'ohmyprints', array($this,'custom_oh_my_prints' ));
 		
 	}
 
@@ -179,7 +179,48 @@ class ohmyprints_class  extends basic_plugin_class {
 			dirname(plugin_basename(__FILE__)).'/languages/'
 		);
 	}
+
+	
+	function ohmyprints_headercode () {
+		wp_enqueue_style('ohmyprints_handler', plugins_url('/css/ohmyprints.css', __FILE__ ));
+		wp_register_script( "ohmyprints_js", WP_PLUGIN_URL.'/oh-my-prints/js/ohmyprints.js', array('jquery') );
+		wp_localize_script( 'ohmyprints_js', 'myAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php')));
+		wp_enqueue_script( 'jquery' );	
+		wp_enqueue_script( 'ohmyprints_js' );		
+	}
+	
+	function ohmyprints_admin_headers () {
+		wp_enqueue_style('ohmyprints_admin_css', plugins_url('/css/ohmyprints.css', __FILE__ ));
+	}
+	
+	
+ /*	shortcode  -------------------------------------------------------------------------------------
+	*/ 
  
+	function custom_oh_my_prints( $atts, $content ) {
+		$res = '';
+		$lang = substr(get_bloginfo ( 'language' ), 0, 2);
+		$lang = (in_array($lang,array('en','nl','de','fr')))?$lang:'en';	
+		$useDomain 		= __('www.ohmyprints.com', self::FS_TEXTDOMAIN);		
+		
+		$wadm_id = get_post_meta( $GLOBALS['post']->ID, 'wadm_id', true );
+		if ($wadm_id) {
+			$nonce = wp_create_nonce("forsale_nonce");
+
+			$attribs['data-nonce']			= $nonce;
+			$attribs['data-post_id']		= $GLOBALS['post']->ID;
+			$attribs['data-value-wadm']		= $wadm_id;
+			$attribs['data-value-lang']		= $lang;
+			$attribs['data-value-domain']	= $useDomain;
+
+			foreach($attribs as $tag=>$val):
+				$linkAttribs .= $tag.'= "'.$val.'" ';
+			endforeach;
+		// Code
+			$res .= sprintf($content,'class="oh_my_prints_link" '.$linkAttribs);		
+		}
+	return $res;
+	}
  
  /*	Columns in the posts/pages overview -------------------------------------------------------------------------------------
 	*/
@@ -220,19 +261,9 @@ class ohmyprints_class  extends basic_plugin_class {
 		}
 	}
  
+    /*	page/post artcode box -------------------------------------------------------------------------------------
+	*/
     
-	function ohmyprints_headercode () {
-		wp_enqueue_style('ohmyprints_handler', plugins_url('/css/ohmyprints.css', __FILE__ ));
-		wp_register_script( "ohmyprints_js", WP_PLUGIN_URL.'/ohmyprints/js/ohmyprints.js', array('jquery') );
-		wp_localize_script( 'ohmyprints_js', 'myAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php')));
-		wp_enqueue_script( 'jquery' );	
-		wp_enqueue_script( 'ohmyprints_js' );		
-	}
-	
-	function ohmyprints_admin_headers () {
-		wp_enqueue_style('ohmyprints_admin_css', plugins_url('/css/ohmyprints.css', __FILE__ ));
-	}
-
 	function create_ohmyprints_id_box() {
 		add_meta_box( 'ohmyprints-box', __('Artcode',self::FS_TEXTDOMAIN), array($this,'ohmyprints_id_box'), 'page', 'side', 'default' );
 		add_meta_box( 'ohmyprints-box', __('Artcode',self::FS_TEXTDOMAIN), array($this,'ohmyprints_id_box'), 'post', 'side', 'default' );
@@ -267,6 +298,9 @@ class ohmyprints_class  extends basic_plugin_class {
 			delete_post_meta( $post_id, 'wadm_id', $meta_value );
 	}
 
+	/*	Ajax handler function  -------------------------------------------------------------------------------------
+	*/
+	
 	function clicked_for_sale() {
 		if ( !wp_verify_nonce( $_REQUEST['nonce'], "forsale_nonce")) {
 			exit("No naughty business please");

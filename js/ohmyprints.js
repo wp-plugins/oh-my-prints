@@ -11,7 +11,7 @@
  
 */
 jQuery(document).ready(function($) {
-	$(".ohmyprints_hook a").on('click',function ( event ) {
+	$(".oh_my_prints_link").on('click',function ( event ) {
 		event.preventDefault();
 /*		post_id = jQuery(this).attr("data-post_id")
 		nonce = jQuery(this).attr("data-nonce")

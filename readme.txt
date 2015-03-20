@@ -1,17 +1,17 @@
 === Plugin Name ===
 Contributors: jondor
-Donate link: http://www.funsite.eu/ohmyprints/
-Tags: widget,sale,omyprints,werkaandemuur
+Donate link: http://www.funsite.eu/oh-my-prints/
+Tags: widget,sale,ohmyprints,werkaandemuur
 Requires at least: 3.0.1
 Tested up to: 4.1
-Stable tag: 1.0
+Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Connect a post or page to an object for sale on www.ohmyprint.com or www.werkaandemuur.nl as it's known in the Netherlands
 
 == Description ==
-Connect a post or page to an object for sale on www.ohmyprint.com/www.werkaandemuur.nl
+Connect a post or page to an object for sale on www.ohmyprint.com / www.werkaandemuur.nl
 If a work is not for sale it points to your shop.
 
 Clicks on the shop/photo link are counted and shown as a column in the page/posts overview so you can see how many users clicked on 
@@ -26,8 +26,15 @@ some attributes needed and all those are filled in on the %s spot. After clickin
 in the posts and pages overview there will be a column "sale clicks" which shows the number of times the widget is clicked. 
 If the "for sale" link was followed on an photo which is not for sale an '*' is added to the counter.
 
-Btw. This plugin has notthing to do with "Oh My Print" or "Werk aan de muur". They don't have an api or any programmer support and this 
-plugin basically redirects your users to the right page. To bad for the lack of api, I would love to show some real statistics.. 
+Btw. This plugin has no connection with the company behind "Oh My Print" or "Werk aan de muur". They don't have an api or any programmer support and this 
+plugin basically just redirects your users to the right page. To bad for the lack of api, I would love to show some real statistics.. 
+
+Since version 1.1 there's also a shortcode to use:
+
+[ohmyprints]This photo is for sale! <a %s>Click here</a> to go to the sales page.[/ohmyprints]
+
+The text will only be shown when there's an artcode for the page. The <a %s> will be changed into an link with the right info as needed. 
+
 
 = example =
 
@@ -35,7 +42,7 @@ For an example of the plugin in action see:
 http://www.funsite.eu/2015/02/los-hoes-het-lammerinkswonner/
 
 I use this widget together with WooSidebars (https://wordpress.org/plugins/woosidebars/) so I can easy controle where the widget ends up.. 
-The widget isn't tested for 4.1 but works without problems for me. 
+The WooSidebars widget isn't tested for 4.1 but works without problems for me. 
 In my case it's only loaded for photo's in the "for sale" category. 
 
 == Installation ==
@@ -69,6 +76,10 @@ Well, yes.. but the same code is also part of the URL. And there you CAN cut and
 = 1.0 =
 
 * First release
+
+= 1.1 =
+* added shortcode
+* few minor fixes. 
 
 == Upgrade Notice ==
 

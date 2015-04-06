@@ -4,7 +4,7 @@ Donate link: http://www.funsite.eu/oh-my-prints/
 Tags: widget,sale,ohmyprints,werkaandemuur
 Requires at least: 3.0.1
 Tested up to: 4.1
-Stable tag: 1.1
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -73,13 +73,17 @@ Well, yes.. but the same code is also part of the URL. And there you CAN cut and
 
 == Changelog ==
 
-= 1.0 =
-
-* First release
+= 1.2 =
+I noticed that the english version of the site disappeared. As I'm not sure it ever will show up again, I added a selection to the widget where
+you can force which language to use. The default is "site language" which works as before. The alternatives are NL, EN, DE and FR.
 
 = 1.1 =
 * added shortcode
 * few minor fixes. 
+
+= 1.0 =
+
+* First release
 
 == Upgrade Notice ==
 

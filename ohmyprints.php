@@ -1,14 +1,14 @@
 <?php
 /**
  * @package oh-my-prints
- * @version 1.1
+ * @version 1.2
  */
 /*
 Plugin Name: Oh my prints
 Plugin URI: http://www.funsite.eu/plugins/oh-my-prints
 Description: Link to a page on the "Oh my prints" site for selling the photo or painting on canvas..
 Author: Gerhard Hoogterp
-Version: 1.1
+Version: 1.2
 Author URI: http://www.funsite.eu/
 Text Domain: ohmyprints
 Domain Path: /languages
@@ -38,12 +38,22 @@ class ohmyprints_widget extends WP_Widget {
 			$description	= esc_textarea($instance['description']);
 			$selltext		= esc_textarea($instance['selltext']);
 			$defaulturl		= $instance['defaulturl'];
+			$language		= $instance['language'];
 	    } else {
 			$title 			= __('Prints for sale',self::FS_TEXTDOMAIN);
 			$description	= __('This photo is not for sale. Please contact me if you are interested or <a %s>click here</a> to go to the shop.',self::FS_TEXTDOMAIN);
 			$selltext		= __('Buy this photo, <a %s>click here</a>.',self::FS_TEXTDOMAIN);
 			$defaulturl		= __('http://yoursitename.ohmyprints.com',self::FS_TEXTDOMAIN);
+			$language		= '';
 	    }
+
+	    $languages  = array(
+						''		=> 'site language',
+						'en'	=> 'English',
+						'nl'	=> 'Nederlands',
+						'de'	=> 'Deutsch',
+						'fr'	=> 'Français'
+						);	
 	    ?>
 
 	    <p>
@@ -54,6 +64,21 @@ class ohmyprints_widget extends WP_Widget {
 	    <p>
 	    <label for="<?php echo $this->get_field_id('defaulturl'); ?>"><?php _e('Your site', self::FS_TEXTDOMAIN); ?></label>
 	    <input class="widefat" id="<?php echo $this->get_field_id('defaulturl'); ?>" name="<?php echo $this->get_field_name('defaulturl'); ?>" type="text" value="<?php echo $defaulturl; ?>" />
+	    </p>
+	    
+   	    <p>
+	    <label for="<?php echo $this->get_field_id('language'); ?>"><?php _e('Force language', self::FS_TEXTDOMAIN); ?></label>
+		<select class="widefat" id="<?php echo $this->get_field_id('language'); ?>" name="<?php echo $this->get_field_name('language'); ?>">
+		<?php 
+		foreach($languages as $tag=>$name):
+			print '<option value="'.$tag.'"';
+			if ($tag==$language) {
+				print " selected";
+			}
+			print '>'.$name."</option>\n";
+			endforeach;
+		?>
+		</select><br>
 	    </p>
 
     
@@ -78,6 +103,7 @@ class ohmyprints_widget extends WP_Widget {
 	    $instance['description']	= $new_instance['description'];
 	    $instance['selltext']		= $new_instance['selltext'];
 	    $instance['defaulturl'] 	= $new_instance['defaulturl'];
+	    $instance['language']		= $new_instance['language'];
 	    return $instance;
 	}
 
@@ -90,10 +116,13 @@ class ohmyprints_widget extends WP_Widget {
 		$description 	= apply_filters('widget_text', $instance['description']);
 		$selltext 		= apply_filters('widget_text', $instance['selltext']);
 		$defaulturl 	= $instance['defaulturl']; 
+		$language		= $instance['language'];
 		
 		$useLanguage 	= __('en', self::FS_TEXTDOMAIN);
 		$useDomain 		= __('www.ohmyprints.com', self::FS_TEXTDOMAIN);
 
+		$useLanguage	= $language?$language:$useLanguage;
+		
 		echo $before_widget;
 	  
 		// Display the widget

@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Oh my prints v1.0\n"
+"Project-Id-Version: Oh my prints v1.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2015-02-19 21:20:35+0000\n"
+"PO-Revision-Date: 2015-04-06 19:59:30+0000\n"
 "Last-Translator: admin <admin@funsite.eu>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -22,20 +22,9 @@ msgstr ""
 
 #. translators: plugin header field 'Name'
 #: ohmyprints.php:0
+#: ohmyprints.php:28
 #@ ohmyprints
 msgid "Oh my prints"
-msgstr ""
-
-#. translators: plugin header field 'PluginURI'
-#: ohmyprints.php:0
-#@ ohmyprints
-msgid "http://www.funsite.eu/plugins/ohmyprints"
-msgstr ""
-
-#. translators: plugin header field 'Description'
-#: ohmyprints.php:0
-#@ ohmyprints
-msgid "Link to a page on the \"O my prints\" site for selling the photo or painting on canvas.."
 msgstr ""
 
 #. translators: plugin header field 'Author'
@@ -50,87 +39,100 @@ msgstr ""
 msgid "http://www.funsite.eu/"
 msgstr ""
 
-#. translators: plugin header field 'Version'
-#: ohmyprints.php:0
-#@ ohmyprints
-msgid "1.0"
-msgstr ""
-
-#: ohmyprints.php:28
-#@ ohmyprints
-msgid "Oh my Prints"
-msgstr ""
-
-#: ohmyprints.php:29
-#@ ohmyprints
-msgid "Link to an page on \"O my prints\"."
-msgstr ""
-
-#: ohmyprints.php:42
+#: ohmyprints.php:43
 #@ ohmyprints
 msgid "Prints for sale"
-msgstr ""
-
-#: ohmyprints.php:43
-#, php-format
-#@ ohmyprints
-msgid "This photo is not for sale. Please contact me if you are interested or <a %s>click here</a> to go to the shop."
-msgstr ""
-
-#: ohmyprints.php:45
-#@ ohmyprints
-msgid "http://yoursitename.ohmyprints.com"
-msgstr ""
-
-#: ohmyprints.php:50
-#@ ohmyprints
-msgid "Widget Title"
-msgstr ""
-
-#: ohmyprints.php:55
-#@ ohmyprints
-msgid "Your site"
-msgstr ""
-
-#: ohmyprints.php:61
-#@ ohmyprints
-msgid "Description"
-msgstr ""
-
-#: ohmyprints.php:66
-#@ ohmyprints
-msgid "For sale text"
-msgstr ""
-
-#: ohmyprints.php:93
-#@ ohmyprints
-msgid "en"
-msgstr ""
-
-#: ohmyprints.php:94
-#@ ohmyprints
-msgid "www.ohmyprints.com"
-msgstr ""
-
-#: ohmyprints.php:202
-#@ ohmyprints
-msgid "Sale clicks"
-msgstr ""
-
-#: ohmyprints.php:237
-#: ohmyprints.php:238
-#@ ohmyprints
-msgid "Artcode"
-msgstr ""
-
-#: ohmyprints.php:243
-#@ ohmyprints
-msgid "The artcode as given on the page"
 msgstr ""
 
 #: ohmyprints.php:44
 #, php-format
 #@ ohmyprints
+msgid "This photo is not for sale. Please contact me if you are interested or <a %s>click here</a> to go to the shop."
+msgstr ""
+
+#: ohmyprints.php:46
+#@ ohmyprints
+msgid "http://yoursitename.ohmyprints.com"
+msgstr ""
+
+#: ohmyprints.php:60
+#@ ohmyprints
+msgid "Widget Title"
+msgstr ""
+
+#: ohmyprints.php:65
+#@ ohmyprints
+msgid "Your site"
+msgstr ""
+
+#: ohmyprints.php:86
+#@ ohmyprints
+msgid "Description"
+msgstr ""
+
+#: ohmyprints.php:91
+#@ ohmyprints
+msgid "For sale text"
+msgstr ""
+
+#: ohmyprints.php:121
+#@ ohmyprints
+msgid "en"
+msgstr ""
+
+#: ohmyprints.php:122
+#: ohmyprints.php:233
+#@ ohmyprints
+msgid "www.ohmyprints.com"
+msgstr ""
+
+#: ohmyprints.php:272
+#@ ohmyprints
+msgid "Sale clicks"
+msgstr ""
+
+#: ohmyprints.php:297
+#: ohmyprints.php:298
+#@ ohmyprints
+msgid "Artcode"
+msgstr ""
+
+#: ohmyprints.php:303
+#@ ohmyprints
+msgid "The artcode as given on the page"
+msgstr ""
+
+#: ohmyprints.php:45
+#, php-format
+#@ ohmyprints
 msgid "Buy this photo, <a %s>click here</a>."
+msgstr ""
+
+#. translators: plugin header field 'PluginURI'
+#: ohmyprints.php:0
+#@ ohmyprints
+msgid "http://www.funsite.eu/plugins/oh-my-prints"
+msgstr ""
+
+#. translators: plugin header field 'Description'
+#: ohmyprints.php:0
+#@ ohmyprints
+msgid "Link to a page on the \"Oh my prints\" site for selling the photo or painting on canvas.."
+msgstr ""
+
+#. translators: plugin header field 'Version'
+#: ohmyprints.php:0
+#@ ohmyprints
+msgid "1.2"
+msgstr ""
+
+#: ohmyprints.php:29
+#@ ohmyprints
+msgid "Link to an page on \"Oh my prints\"."
+msgstr ""
+
+#: ohmyprints.php:70
+#@ ohmyprints
+msgid "Force language"
 msgstr ""
 

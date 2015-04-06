@@ -1,0 +1,138 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Oh my prints v1.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2015-04-06 20:00:33+0000\n"
+"Last-Translator: admin <admin@funsite.eu>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: CSL v1.x\n"
+"X-Poedit-Language: Dutch\n"
+"X-Poedit-Country: NETHERLANDS\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#. translators: plugin header field 'Name'
+#: ohmyprints.php:0
+#: ohmyprints.php:28
+#@ ohmyprints
+msgid "Oh my prints"
+msgstr "Werk aan de muur"
+
+#. translators: plugin header field 'Author'
+#: ohmyprints.php:0
+#@ ohmyprints
+msgid "Gerhard Hoogterp"
+msgstr ""
+
+#. translators: plugin header field 'AuthorURI'
+#: ohmyprints.php:0
+#@ ohmyprints
+msgid "http://www.funsite.eu/"
+msgstr ""
+
+#: ohmyprints.php:43
+#@ ohmyprints
+msgid "Prints for sale"
+msgstr "Prints te koop"
+
+#: ohmyprints.php:44
+#, php-format
+#@ ohmyprints
+msgid "This photo is not for sale. Please contact me if you are interested or <a %s>click here</a> to go to the shop."
+msgstr "Deze  foto is niet te koop. Neem contact met me op wanneer u geïnteresseerd bent of <a %s>klik hier</a> om naar de winkel te gaan."
+
+#: ohmyprints.php:46
+#@ ohmyprints
+msgid "http://yoursitename.ohmyprints.com"
+msgstr "http://yoursitename.werkaandemuur.nl"
+
+#: ohmyprints.php:60
+#@ ohmyprints
+msgid "Widget Title"
+msgstr "Widget titel"
+
+#: ohmyprints.php:65
+#@ ohmyprints
+msgid "Your site"
+msgstr "Uw site"
+
+#: ohmyprints.php:86
+#@ ohmyprints
+msgid "Description"
+msgstr "Beschrijving"
+
+#: ohmyprints.php:91
+#@ ohmyprints
+msgid "For sale text"
+msgstr "Te koop tekst"
+
+#: ohmyprints.php:121
+#@ ohmyprints
+msgid "en"
+msgstr "nl"
+
+#: ohmyprints.php:122
+#: ohmyprints.php:233
+#@ ohmyprints
+msgid "www.ohmyprints.com"
+msgstr "www.werkaandemuur.nl"
+
+#: ohmyprints.php:272
+#@ ohmyprints
+msgid "Sale clicks"
+msgstr "Verkoop kliks"
+
+#: ohmyprints.php:297
+#: ohmyprints.php:298
+#@ ohmyprints
+msgid "Artcode"
+msgstr "Werkcode"
+
+#: ohmyprints.php:303
+#@ ohmyprints
+msgid "The artcode as given on the page"
+msgstr "De werkcode zoals die op de pagina staat"
+
+#. translators: plugin header field 'PluginURI'
+#: ohmyprints.php:0
+#@ ohmyprints
+msgid "http://www.funsite.eu/plugins/oh-my-prints"
+msgstr ""
+
+#. translators: plugin header field 'Description'
+#: ohmyprints.php:0
+#@ ohmyprints
+msgid "Link to a page on the \"Oh my prints\" site for selling the photo or painting on canvas.."
+msgstr ""
+
+#. translators: plugin header field 'Version'
+#: ohmyprints.php:0
+#@ ohmyprints
+msgid "1.2"
+msgstr ""
+
+#: ohmyprints.php:29
+#@ ohmyprints
+msgid "Link to an page on \"Oh my prints\"."
+msgstr ""
+
+#: ohmyprints.php:45
+#, php-format
+#@ ohmyprints
+msgid "Buy this photo, <a %s>click here</a>."
+msgstr ""
+
+#: ohmyprints.php:70
+#@ ohmyprints
+msgid "Force language"
+msgstr "Forceer taal"
+

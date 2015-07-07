@@ -8,10 +8,10 @@ Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Connect a post or page to an object for sale on www.ohmyprint.com or www.werkaandemuur.nl as it's known in the Netherlands
+Connect a post or page to an object for sale on www.ohmyprints.com or www.werkaandemuur.nl as it's known in the Netherlands
 
 == Description ==
-Connect a post or page to an object for sale on www.ohmyprint.com / www.werkaandemuur.nl
+Connect a post or page to an object for sale on www.ohmyprints.com / www.werkaandemuur.nl
 If a work is not for sale it points to your shop.
 
 Clicks on the shop/photo link are counted and shown as a column in the page/posts overview so you can see how many users clicked on 

@@ -1,14 +1,14 @@
 <?php
 /**
  * @package oh-my-prints
- * @version 1.2
+ * @version 1.3
  */
 /*
 Plugin Name: Oh my prints
 Plugin URI: http://www.funsite.eu/plugins/oh-my-prints
 Description: Link to a page on the "Oh my prints" site for selling the photo or painting on canvas..
 Author: Gerhard Hoogterp
-Version: 1.2
+Version: 1.3
 Author URI: http://www.funsite.eu/
 Text Domain: ohmyprints
 Domain Path: /languages
@@ -23,7 +23,7 @@ class ohmyprints_widget extends WP_Widget {
 	const FS_TEXTDOMAIN = ohmyprints_class::FS_TEXTDOMAIN; 
 
 	// constructor
-	function ohmyprints_widget() {
+	public function __construct() {
 		parent::WP_Widget(false, 
 							$name = __('Oh my prints', self::FS_TEXTDOMAIN),
 							array('description' => __('Link to an page on "Oh my prints".',self::FS_TEXTDOMAIN))

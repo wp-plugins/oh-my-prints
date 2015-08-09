@@ -3,8 +3,8 @@ Contributors: jondor
 Donate link: http://www.funsite.eu/oh-my-prints/
 Tags: widget,sale,ohmyprints,werkaandemuur
 Requires at least: 3.0.1
-Tested up to: 4.2
-Stable tag: 1.2
+Tested up to: 4.3
+Stable tag: 1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -72,6 +72,8 @@ Well, yes.. but the same code is also part of the URL. And there you CAN cut and
 4. where to find the artcode.
 
 == Changelog ==
+= 1.3 =
+Fixes for WP 4.3
 
 = 1.2 =
 I noticed that the english version of the site disappeared. As I'm not sure it ever will show up again, I added a selection to the widget where

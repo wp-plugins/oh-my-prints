@@ -1,6 +1,6 @@
 === Plugin Name ===
 Contributors: jondor
-Donate link: http://www.funsite.eu/oh-my-prints/
+Donate link: http://plugins.funsite.eu/oh-my-prints-werk-aan-de-muur/
 Tags: widget,sale,ohmyprints,werkaandemuur
 Requires at least: 3.0.1
 Tested up to: 4.3

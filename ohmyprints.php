@@ -5,11 +5,11 @@
  */
 /*
 Plugin Name: Oh my prints
-Plugin URI: http://www.funsite.eu/plugins/oh-my-prints
+Plugin URI: http://plugins.funsite.eu/oh-my-prints-werk-aan-de-muur/
 Description: Link to a page on the "Oh my prints" site for selling the photo or painting on canvas..
 Author: Gerhard Hoogterp
 Version: 1.3
-Author URI: http://www.funsite.eu/
+Author URI: http://plugins.funsite.eu/oh-my-prints-werk-aan-de-muur/
 Text Domain: ohmyprints
 Domain Path: /languages
 */
